@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/posts'; // ログイン後、ホーム画面(投稿一覧とランキングの画面)にリダイレクト
 
     /**
      * Define your route model bindings, pattern filters, etc.

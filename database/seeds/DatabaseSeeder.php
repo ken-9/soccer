@@ -11,7 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // 実行するSeederのファイル
+        $this->call(UsersTableSeeder::class);
         $this->call(PostsTableSeeder::class);
+        $this->call(PlayersTableSeeder::class);
     }
 }
