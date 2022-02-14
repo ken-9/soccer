@@ -14,8 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('','PostController@home');
+Route::group(['middleware'=>'auth'],function(){
+Route::get('/posts','PostController@home');
+Route::get('/posts/create','PostController@create');
+Route::post('/posts', 'PostController@store');
+});
 
 Auth::routes();
 

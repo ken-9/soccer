@@ -13,6 +13,13 @@
     <h1>コメント投稿</h1>
     <form action="/posts" method="POST">
       @csrf <!-- formタグを使用する際はこれないとエラー出るので忘れずに-->
+      <div class="player">
+        <select name="post[player_id]">
+          @foreach($players as $player)
+            <option value="{{$player->id}}">{{$player->name}}</option>
+          @endforeach
+        </select>
+      </div>
       <div class="title">
         <h1><input type="text" name="post[title]" placeholder="タイトル" value="{{old('post.title')}}"/></h1>
         <p class="title_error">{{$errors->first('post.title')}}</p>
