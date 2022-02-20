@@ -18,6 +18,8 @@ Route::group(['middleware'=>'auth'],function(){
 Route::get('/posts','PostController@home');
 Route::get('/posts/create','PostController@create');
 Route::post('/posts', 'PostController@store');
+Route::get('/posts/{post}', 'PostController@reply');
+Route::post('/posts/{post}', 'ReplyController@send');
 });
 
 Auth::routes();

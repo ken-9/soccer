@@ -4,18 +4,18 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends FormRequest
+class ReplyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-   /* public function authorize()
+    /*public function authorize()
     {
         return false;
-    }
-    */
+    }*/
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,11 +23,9 @@ class PostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-                // タイトル：必須・40字以内
-                'post.title' => 'required|string|max:20',
-                // 本文：必須・4000字以内
-                'post.sentence'  => 'required|string|max:400'
+       return [
+                // 返信本文：必須・400字以内
+                'reply.sentence'  => 'required|string|max:400'
         ];
     }
 }
