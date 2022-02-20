@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soccer-Home</title>
-  <link rel="stylesheet" href="{{asset('/css/home.css')}}">
+  <link rel="stylesheet" href="{{secure_asset('/css/home.css')}}">
 </head>
   <body>
     <h1>Home</h1>
@@ -16,9 +16,9 @@
       <div class="posts">
         @foreach ($posts as $post)
           <div class="post">
-            <h2 class="title">{{$post->title}}</h2>
+            <h2 class="title"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
             <p class="name">{{$post->player->name}}</p> <!--{親テーブル}->{個テーブル}->{表示したいカラム}-->
-            <p class='body'>{{ $post->sentence }}</p>
+            <p class='sentence'>{{ $post->sentence }}</p>
           </div>
 	      @endforeach
       </div>

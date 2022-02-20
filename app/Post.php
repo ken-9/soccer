@@ -27,4 +27,9 @@ class Post extends Model
     {
         return $this->belongsTo('App\Player');
     }
+    
+    public function replies()
+    {
+        return $this->hasMany('App\Reply');
+    }
 }

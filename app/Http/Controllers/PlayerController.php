@@ -7,5 +7,5 @@ use Illuminate\Http\Request;
 class PlayerController extends Controller
 {
     //
-    return view('posts/home');
+    //return view('posts/home');
 }
