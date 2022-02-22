@@ -26,7 +26,7 @@ class Player extends Model
                        }]);*/
                        
         $query=Player::withCount('posts');
-        $ranks=Player::fromSub($query, 'posts_count')
+        $ranks=Player::fromSub($query, 'posts')
             ->having('posts_count', '>', '0')
             ->orderBy('posts_count', 'DESC')  // 投稿が多い選手順に並び変え
             ->limit(10)
