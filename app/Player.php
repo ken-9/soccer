@@ -24,6 +24,11 @@ class Player extends Model
                        return $ranks;
     }
     
+    public function getPlayerInfo() // 選手情報を取得
+    {
+        
+    }
+    
     public function posts()
     {
         return $this->hasMany('App\Post');
