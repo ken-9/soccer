@@ -33,7 +33,7 @@
           <?php $i=1;?>
           @foreach ($ranks as $rank)
             <div class="rank">
-              <p>{{$i}}位:{{$rank->name}}/{{$rank->posts_count}}件</p>
+              <p>{{$i}}位:{{$rank->name}}/{{$rank->count}}件</p>
             </div>
           <?php $i++;?>
           @endforeach
