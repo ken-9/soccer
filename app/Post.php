@@ -23,6 +23,11 @@ class Post extends Model
         return $this->orderBy('created_at', 'DESC')->paginate($limit_count);
     }
     
+    public function RepliesIsNull($post_id)
+    {
+        return $this->where('id','=',$post_id)->first();
+    }
+    
     public function player()
     {
         return $this->belongsTo('App\Player');
