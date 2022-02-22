@@ -38,7 +38,7 @@ class Player extends Model
         
         $ranks=Player::fromSub($query, 'alias')
             ->where('posts_count', '>', '0')
-            ->orderBy('posts_count', 'DESC')  // 投稿が多い選手順に並び変え
+            //->orderBy('posts_count', 'DESC')  // 投稿が多い選手順に並び変え
             ->limit(10)
             ->get();              
                        
