@@ -21,16 +21,26 @@ class Player extends Model
                        ->limit(10)
                        ->get();*/
                        
+         $result = Player::withCount(['posts'=> function (Builder $query) use ($date) {
+                       $query->whereDate('created_at','>',$date);  // where 現在時刻から1日以内
+                       }])->get();
+                       
+        $ranks=$result;/*->where($result->posts_count,'>','0')   // posts_count=0のものは省く(whereDateだけでは、posts_count=0のレコードとして取ってきてしまう)
+                       ->sortBy($result->posts_count)  // 投稿が多い選手順に並び変え
+                       ->limit(10)
+                       ->all();*/
+                       
         /*$query=Player::withCount(['posts'=> function (Builder $query2) use ($date) {
                        $query2->whereDate('created_at','>',$date);  // where 現在時刻から1日以内
                        }]);*/
-                       
+        /*               
         $query=Player::withCount('posts');
+        
         $ranks=Player::fromSub($query, 'posts')
             ->having('posts_count', '>', '0')
             ->orderBy('posts_count', 'DESC')  // 投稿が多い選手順に並び変え
             ->limit(10)
-            ->get();              
+            ->get();              */
                        
                        return $ranks;
     }
