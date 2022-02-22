@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 class Reply extends Model
 {
@@ -23,12 +25,23 @@ class Reply extends Model
                         $q->where('id', '=', $post_id);
                         })
                         ->get();
-        // ↑で取得したデータを、「返信対象の投稿」と「返信一覧」の表示用にそれぞれ分ける
-        // target_post : 返信対象の投稿
-        $target_post = $query->first(); // 返信対象の投稿は1件のみなのでfirst()
-        // replies : 返信一覧
-        $replies = $query->sortBy('created_at') // 返信日時が早いもの程上に
+                        
+        if($query->isNotEmpty()) // 返信が1件以上ある場合
+        {
+            // ↑で取得したデータを、「返信対象の投稿」と「返信一覧」の表示用にそれぞれ分ける
+            // target_post : 返信対象の投稿
+            $target_post = $query->first(); // 返信対象の投稿は1件のみなのでfirst()
+            // replies : 返信一覧
+            $replies = $query->sortBy('created_at') // 返信日時が早いもの程上に
                          ->all();
+        }
+        else // 返信が0件の場合
+        {
+            //$target_post=DB::table('posts')->where('id','=',$post_id)->first();
+            //$target_post=$this->post()->where('id','=',$post_id)->first();
+            $target_post=null;
+            $replies=null;
+        }
         dump($query);
         
         return [$target_post, $replies];
