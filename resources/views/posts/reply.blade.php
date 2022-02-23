@@ -33,7 +33,7 @@
           <div class="replies">
             @foreach ($replies as $reply)
               <div class="reply">
-                <p class='reply_user'>from {{ $reply->user_id }}</p>
+                <p class='reply_user'>from {{ $reply->post->user->name }}</p>
                 <p class='reply_sentence'>{{ $reply->sentence }}</p>
               </div>
 	          @endforeach

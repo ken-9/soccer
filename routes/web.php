@@ -20,6 +20,7 @@ Route::get('/posts/create','PostController@create');
 Route::post('/posts', 'PostController@store');
 Route::get('/posts/{post}', 'PostController@reply');
 Route::post('/posts/{post}', 'ReplyController@send');
+Route::get('/players/{player}','PlayerController@player');
 });
 
 Auth::routes();

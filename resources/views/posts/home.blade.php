@@ -17,7 +17,7 @@
         @foreach ($posts as $post)
           <div class="post">
             <h2 class="title"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
-            <p class="name">{{$post->player->name}}</p> <!--{親テーブル}->{個テーブル}->{表示したいカラム}-->
+            <p class="name"><a href="/players/{{$post->player->id}}">{{$post->player->name}}</a></p> <!--{親テーブル}->{個テーブル}->{表示したいカラム}-->
             <p class='sentence'>{{ $post->sentence }}</p>
           </div>
 	      @endforeach
