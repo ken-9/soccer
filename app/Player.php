@@ -26,9 +26,9 @@ class Player extends Model
         return $ranks;
     }
     
-    public function getPlayerInfo() // 選手情報を取得
+    public function getPlayerInfo($id) // 選手情報を取得
     {
-        
+        return $this->where('id','=',$id)->first();
     }
     
     public function posts()

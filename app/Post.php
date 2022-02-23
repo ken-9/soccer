@@ -25,7 +25,16 @@ class Post extends Model
     
     public function RepliesIsNull($post_id)
     {
-        return $this->where('id','=',$post_id)->first();
+        return $this->where('id','=',$post_id)
+                    ->first();
+    }
+    
+    public function getPostsOfPlayer($player_id)
+    {
+        // 対象の選手(1人)の投稿を取ってくる
+        return $this->where('player_id','=',$player_id)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate(10);
     }
     
     public function player()
@@ -36,5 +45,10 @@ class Post extends Model
     public function replies()
     {
         return $this->hasMany('App\Reply');
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }
