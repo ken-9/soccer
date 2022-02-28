@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>投稿への返信一覧</title>
-  <link rel="stylesheet" href="{{secure_asset('/css/reply.css')}}">
+  <link rel="stylesheet" href="{{secure_asset('/css/posts/reply.css')}}">
 </head>
   <body>
     <h1>投稿への返信一覧</h1>
-      
-      @empty($replies) <!--返信が0件の際の表示-->
+      <div class="contents">
+        @empty($replies) <!--返信が0件の際の表示-->
           <!--返信対象の投稿を表示-->
           <div class="target_post">
             <h2 class="target_post_title">{{$target_post->title}}</h2>
@@ -22,7 +22,7 @@
           <!--返信が無い事を表示-->
           <div class="replies"><p>返信はありません</p></div>
       
-      @else <!--返信が1件以上ある際の表示-->
+        @else <!--返信が1件以上ある際の表示-->
           <!--返信対象の投稿を表示-->
           <div class="target_post">
             <h2 class="target_post_title">{{$target_post->post->title}}</h2>
@@ -38,7 +38,7 @@
               </div>
 	          @endforeach
           </div>
-      @endempty
+        @endempty
       
       <!--返信フォーム-->
       @empty($replies)
@@ -53,9 +53,10 @@
         <p class="sentence_error">{{$errors->first('reply.sentence')}}</p>
       </div>
         <div>
-          <input type="submit" value="送信"/>
+          <input class="button" type="submit" value="送信"/>
         </div>
       </form>
+    </div>
   </body>
 </html>
 @endsection

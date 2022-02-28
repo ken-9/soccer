@@ -21,7 +21,7 @@ class Player extends Model
             ->where('posts_count', '>', '0') // havingだとherokuで動かない
             ->orderBy('posts_count', 'DESC') // 投稿が多い選手順に並び変え
             ->limit(10)
-            ->get();              
+            ->get();       
                        
         return $ranks;
     }
