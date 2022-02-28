@@ -1,0 +1,44 @@
+body{
+    background-image: url('/image/back_ground.jpg');
+    background-size: cover;
+}
+.contents{
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+.player{
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.titlearea{
+  min-width: 900px;
+  max-width: 1000px;
+  min-height: 50px;
+  max-height: 50px;
+}
+.textarea{
+    font-size: 20px;
+    resize: none;
+  min-width: 900px;
+  max-width: 1000px;
+  min-height: 400px;
+  max-height: 500px;
+}
+.sub_parts{
+    display: flex;
+    justify-content: space-between;
+}
+.button {
+  color: #fff;
+  background-color: #1DA1F2;
+  border-radius: 1vh;
+  padding: 5px 14px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.button:hover {
+  color: #fff;
+  background: #1dc7f2;
+}

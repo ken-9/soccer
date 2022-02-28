@@ -17,7 +17,7 @@ class Post extends Model
     
     const UPDATED_AT=null;
     
-    public function getPaginateByLimit(int $limit_count = 10)
+    public function getPaginateByLimit(int $limit_count = 5)
     {
         // 投稿順で降順に並べたあと、limitで件数制限をかける
         return $this->orderBy('created_at', 'DESC')->paginate($limit_count);

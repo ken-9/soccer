@@ -42,14 +42,11 @@ class PostController extends Controller
     
     public function reply(Post $post,Reply $target_post_and_reply)
     {
-        dump($post->id);
-        
         list($target_post, $reply) = $target_post_and_reply->getReply($post->id);
         
         if($reply==null) // 返信が0件の場合
         {
             $target_post=$post->RepliesIsNull($post->id); // postsテーブルから対象となる投稿のデータだけ取得.そこだけ表示させる
-            dump($target_post);
         }
         return view('posts/reply')
                 ->with(['target_post'=>$target_post])

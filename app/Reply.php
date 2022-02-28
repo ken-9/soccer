@@ -37,12 +37,9 @@ class Reply extends Model
         }
         else // 返信が0件の場合
         {
-            //$target_post=DB::table('posts')->where('id','=',$post_id)->first();
-            //$target_post=$this->post()->where('id','=',$post_id)->first();
             $target_post=null;
             $replies=null;
         }
-        dump($query);
         
         return [$target_post, $replies];
     }
