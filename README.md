@@ -41,5 +41,10 @@ PostgreSQL 13
 ## デプロイ
 https://forsoccerfan.herokuapp.com/
 
+※デフォルトユーザを予め作成しております。ログイン画面で以下を入力して下さい。
+
+e-mail : default@email.com
+
+password : password
 ## デモ
 //
