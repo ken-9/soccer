@@ -31,6 +31,7 @@
           </div>
           <!--返信一覧を表示-->
           <div class="replies">
+            <div class="paginate">{{$replies->links()}}</div>
             @foreach ($replies as $reply)
               <div class="reply">
                 <p class='reply_user'>from {{ $reply->post->user->name }}</p>
@@ -42,20 +43,23 @@
       
       <!--返信フォーム-->
       @empty($replies)
-       <form action="/posts/{{$target_post->id}}" method="POST">
+        <form name="form_send" action="/posts/{{$target_post->id}}" method="POST">
       @else
-       <form action="/posts/{{$target_post->post_id}}" method="POST">
+        <form name="form_send" action="/posts/{{$target_post->post_id}}" method="POST">
       @endempty
-      @csrf
-      <!--本文入力部分-->
-      <div class="sentence">
-        <textarea name="reply[sentence]" placeholder="返信コメント">{{old('reply.sentence')}}</textarea>
-        <p class="sentence_error">{{$errors->first('reply.sentence')}}</p>
-      </div>
-        <div>
-          <input class="button" type="submit" value="送信"/>
+        @csrf
+        <!--本文入力部分-->
+        <div class="sentence_and_sub_parts">
+          <div class="sentence">
+            <textarea class="textarea" name="reply[sentence]" placeholder="返信コメント">{{old('reply.sentence')}}</textarea>
+            <p class="msg_err">{{$errors->first('reply.sentence')}}</p>
+          </div>
+          <div class="sub_parts">
+            <a class="button_back" href='/posts'>戻る</a>
+            <a class="button_send" href="#" onclick="document.form_send.submit();">送信</a>
+          </div>
         </div>
-      </form>
+        </form>
     </div>
   </body>
 </html>

@@ -18,7 +18,7 @@
         <h2>最新の投稿</h2>
           <div class="sub_parts">
 	          <div class="paginate">{{$posts->links()}}</div>
-            <button type=“button” class="button_create" onclick="location.href='/posts/create'">投稿作成</button>
+            <a class="button_create" href='/posts/create'>投稿作成</a>
           </div>
           @foreach ($posts as $post)
             <div class="post">
