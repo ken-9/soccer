@@ -18,27 +18,44 @@ body{
   max-height: 50px;
 }
 .textarea{
-    font-size: 20px;
-    resize: none;
+  font-size: 20px;
+  resize: none;
   min-width: 900px;
   max-width: 1000px;
   min-height: 400px;
   max-height: 500px;
 }
-.sub_parts{
-    display: flex;
-    justify-content: space-between;
-}
-.button {
+.button_send {
   color: #fff;
   background-color: #1DA1F2;
   border-radius: 1vh;
   padding: 5px 14px;
-  margin-bottom: 15px;
+  margin:auto;
   font-size: 20px;
   cursor: pointer;
 }
-.button:hover {
+.button_send:hover {
   color: #fff;
+  text-decoration: none;
   background: #1dc7f2;
+}
+.button_back {
+  color: #fff;
+  background-color: #1DA1F2;
+  border-radius: 1vh;
+  padding: 5px 14px;
+  margin: auto;
+  font-size: 20px;
+  cursor: pointer;
+}
+.button_back:hover {
+  color: #fff;
+  text-decoration: none;
+  background: #1dc7f2;
+}
+.msg_err{
+    background-color: #ff8c00;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
 }

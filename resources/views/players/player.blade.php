@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>選手情報</title>
-  <link rel="stylesheet" href="{{secure_asset('/css/player.css')}}">
+  <link rel="stylesheet" href="{{secure_asset('/css/players/player.css')}}">
 </head>
   <body>
     <h1>選手情報</h1>
