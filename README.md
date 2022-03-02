@@ -43,4 +43,14 @@ e-mail : default@email.com
 password : password
 
 ## デモ
-//
+### ホーム画面  
+![ホーム](https://user-images.githubusercontent.com/94457873/156373364-a6a9fb59-40dd-428f-9c90-25d729844116.png)
+
+### 投稿作成画面  
+![新規投稿作成](https://user-images.githubusercontent.com/94457873/156373677-9ad8cd45-8f92-44af-a22f-833e63b82014.png)
+
+### 返信一覧表示画面  
+![返信一覧](https://user-images.githubusercontent.com/94457873/156373797-2fc45fef-a355-4c7a-81fd-fed8945d141e.png)
+
+### 選手情報表示画面  
+![選手情報](https://user-images.githubusercontent.com/94457873/156373944-bbba5960-6a12-42d7-8bce-3fc707bf0afd.png)
